@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/manual"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"></LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sensor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/btn_enter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_space"
+            app:layout_constraintEnd_toStartOf="@+id/btn_right"
+            app:layout_constraintHorizontal_bias="0.731"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/toggleButton_side_sensor"
+            app:layout_constraintTop_toBottomOf="@+id/toggleButton_side_sensor"
+            app:srcCompat="@drawable/ic_baseline_subdirectory_arrow_left_24" />
+
+        <ToggleButton
+            android:id="@+id/up_sensor_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="46dp"
+            android:text="ToggleButton"
+            app:layout_constraintBottom_toTopOf="@+id/toggleButton_side_sensor"
+            app:layout_constraintEnd_toStartOf="@+id/btn_down"
+            app:layout_constraintStart_toEndOf="@+id/btn_up"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_up"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_left"
+            app:layout_constraintEnd_toStartOf="@+id/btn_down"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
+        <ImageButton
+            android:id="@+id/btn_down"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_up"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton_side_sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="85dp"
+            android:text="ToggleButton"
+            app:layout_constraintBottom_toTopOf="@+id/btn_space"
+            app:layout_constraintEnd_toEndOf="@+id/up_sensor_btn"
+            app:layout_constraintStart_toStartOf="@+id/up_sensor_btn"
+            app:layout_constraintTop_toBottomOf="@+id/up_sensor_btn" />
+
+        <ImageButton
+            android:id="@+id/btn_right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_space"
+            app:layout_constraintEnd_toEndOf="@+id/btn_down"
+            app:layout_constraintStart_toStartOf="@+id/btn_down"
+            app:layout_constraintTop_toBottomOf="@+id/btn_down"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+        <ImageButton
+            android:id="@+id/btn_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_space"
+            app:layout_constraintEnd_toEndOf="@+id/btn_up"
+            app:layout_constraintStart_toStartOf="@+id/btn_up"
+            app:layout_constraintTop_toBottomOf="@+id/btn_up"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_left_24" />
+
+        <Button
+            android:id="@+id/btn_space"
+            android:layout_width="0dp"
+            android:layout_height="67dp"
+            android:layout_margin="16dp"
+            android:text="Space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_right"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="@+id/btn_left" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SensorMode" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SideWise Limit" />
+
+                <EditText
+                    android:id="@+id/sideLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="2" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Acceleration Limit" />
+
+                <EditText
+                    android:id="@+id/accLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="5" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Break Limit" />
+
+                <EditText
+                    android:id="@+id/breakLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:text="3" />
+
+                <ImageButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_done_24" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/unconnected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <EditText
+            android:id="@+id/remoteip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter remote IP"
+            android:inputType="textPersonName"
+            android:text="127.0.0.1" />
+
+        <Button
+            android:id="@+id/btncon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connect"
+            app:icon="@drawable/ic_baseline_add_24" />
+
+        <ImageButton
+            android:id="@+id/settingsbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_settings_24" />
+    </LinearLayout>
+
+</LinearLayout>
